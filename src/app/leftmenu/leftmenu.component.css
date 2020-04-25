@@ -1,0 +1,8 @@
+.left-menu{
+    display: flex;
+    width: 260px;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(253, 245, 255);
+    box-shadow: 0 10px 0 black;
+}

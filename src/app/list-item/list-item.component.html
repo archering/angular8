@@ -1,0 +1,13 @@
+<li class="list-item">
+  <span class="photo">
+    <img [src]="student.photo" alt="">
+  </span>
+  <span class="info">
+    <span class="id">{{student.id}}</span>
+    <span class="detail">
+      <span>{{student.name}}</span>
+      <span>{{student.gender}}</span>
+    </span>
+  </span>
+  <span class="rm" (click)="onRemove()">X</span>
+</li>

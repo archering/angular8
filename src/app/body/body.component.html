@@ -1,0 +1,8 @@
+<div>
+    <p>线面显示一个组件列表</p>
+    <ul>
+      <app-list-item 
+      *ngFor="let user of users; let i = index" [student]="user"
+      (removeItem)="doRemove($event)"></app-list-item>
+    </ul>
+</div>

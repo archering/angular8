@@ -1,0 +1,49 @@
+<section class="content"> 
+    <button (click)="doclick()">click me</button>
+    <div>
+      输入任意字符，查看console
+      <input type="text" (input)="typing($event)">
+
+      输入内容查看数据的双向改变
+      <input type="text" [(ngModel)]="info">
+      <div>{{info}}</div>
+
+    </div>
+    <div>
+      <P>structure directive</P>
+      <div>
+        <button (click)="toggle()">toggle显示隐藏</button>
+        <div *ngIf="show">这里是显示的内容</div>
+      </div>
+      <p> ngIf - else localreference</p>
+      <button (click)="toggle2()">点击处理显示else</button>
+      <div *ngIf="showme;else localelse">
+         当showme = 1 显示 这段文字
+       </div>
+       <ng-template #localelse> 
+         <p>当showme!=1 时显示这里的描述</p>
+       </ng-template>
+    </div>
+    <div [ngStyle]="{'background-color':'red',width:'100px','height':'30px'}">
+
+    </div>
+    <div [ngStyle]="{backgroundColor:'blue',width:'100px','height':'30px'}">
+
+    </div>  
+
+    <section>
+      <p>使用ngClass</p>
+      <div [ngClass]="{'showBlue': blueClass == 1}"></div>
+  
+    </section>
+    <div>
+      <ul>
+        <li *ngFor="let item of users;let i = index"  [ngClass]="{'showBlue': i%2 == 0}">
+          <span>{{item.id}}</span>
+          <span [innerText]="item.name"></span>
+        </li>
+      </ul>
+
+    </div>
+</section>
+

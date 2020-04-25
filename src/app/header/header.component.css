@@ -1,0 +1,22 @@
+.header{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(73, 1, 141);
+    flex-direction: row;
+    align-items: center;
+    color:rgb(241, 179, 253);
+    padding: 0 30px;
+}
+
+.header>span{
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.trademark{
+    font-size: 20px;
+    font-weight: bolder;
+    color:white;
+    text-shadow: 0 2px 2px rgb(37, 15, 15);
+}
