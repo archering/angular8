@@ -40,7 +40,9 @@ export class BodyComponent implements OnInit {
   }
 
   doRemove(evt:any){
-    console.log(evt);
+    this.users = this.users.filter( item =>{
+      return item.id !== evt.id;
+    });
   }
 
 }

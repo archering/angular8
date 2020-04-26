@@ -3,6 +3,7 @@
     <ul>
       <app-list-item 
       *ngFor="let user of users; let i = index" [student]="user"
-      (removeItem)="doRemove($event)"></app-list-item>
+      (removeItem)="doRemove($event)">
+    </app-list-item>
     </ul>
 </div>

@@ -1,6 +1,6 @@
 <li class="list-item">
   <span class="photo">
-    <img [src]="student.photo" alt="">
+    <img [src]="student.photo" alt="" #theImage>
   </span>
   <span class="info">
     <span class="id">{{student.id}}</span>
@@ -9,5 +9,5 @@
       <span>{{student.gender}}</span>
     </span>
   </span>
-  <span class="rm" (click)="onRemove()">X</span>
+  <span class="rm" (click)="onRemove(theImage)">X</span>
 </li>

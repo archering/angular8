@@ -1,0 +1,108 @@
+<table width="100%">
+  <colgroup>
+    <col width="20%">
+    <col width="80%">
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <p> 钩子</p>
+        <p translation-origin="off"> Hook</p>
+
+      </th>
+      <th>
+        <p> 用途及时机</p>
+        <p translation-origin="off"> Purpose and Timing</p>
+
+      </th>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code>ngOnChanges()</code></p>
+      </td>
+      <td>
+        <p> 当 Angular（重新）设置数据绑定输入属性时响应。
+          该方法接受当前和上一属性值的 <code><a href="api/core/SimpleChanges" class="code-anchor">SimpleChanges</a></code> 对象</p>
+        <p> 在 <code>ngOnInit()</code> 之前以及所绑定的一个或多个输入属性的值发生变化时都会调用。</p>
+
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code>ngOnInit()</code></p>
+      </td>
+      <td>
+        <p> 在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。</p>
+
+        <p> 在第一轮 <code>ngOnChanges()</code> 完成之后调用，只调用<strong>一次</strong>。</p>
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code>ngDoCheck()</code></p>
+      </td>
+      <td>
+        <p> 检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。</p>
+        <p> 在每个变更检测周期中，紧跟在 <code>ngOnChanges()</code> 和 <code>ngOnInit()</code> 后面调用。</p>
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code><a href="api/router/RouterLinkActive#ngAfterContentInit"
+              class="code-anchor">ngAfterContentInit()</a></code></p>
+      </td>
+      <td>
+        <p> 当 Angular 把外部内容投影进组件/指令的视图之后调用。</p>
+
+        <p> 第一次 <code>ngDoCheck()</code> 之后调用，只调用一次。</p>
+
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code>ngAfterContentChecked()</code></p>
+      </td>
+      <td>
+        <p> 每当 Angular 完成被投影组件内容的变更检测之后调用。</p>
+
+        <p> <code><a href="api/router/RouterLinkActive#ngAfterContentInit"
+              class="code-anchor">ngAfterContentInit()</a></code> 和每次 <code>ngDoCheck()</code> 之后调用</p>
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code><a href="api/forms/NgForm#ngAfterViewInit" class="code-anchor">ngAfterViewInit()</a></code></p>
+      </td>
+      <td>
+        <p> 当 Angular 初始化完组件视图及其子视图之后调用。</p>
+
+        <p> 第一次 <code>ngAfterContentChecked()</code> 之后调用，只调用一次。</p>
+
+      </td>
+    </tr>
+    <tr style="vertical-align:top">
+      <td>
+        <p> <code>ngAfterViewChecked()</code></p>
+      </td>
+      <td>
+        <p> 每当 Angular 做完组件视图和子视图的变更检测之后调用。</p>
+
+        <p> <code><a href="api/forms/NgForm#ngAfterViewInit" class="code-anchor">ngAfterViewInit()</a></code> 和每次
+          <code>ngAfterContentChecked()</code> 之后调用。</p>
+
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> <code>ngOnDestroy()</code></p>
+      </td>
+      <td>
+        <p> 每当 Angular 每次销毁指令/组件之前调用并清扫。
+          在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。</p>
+
+        <p> 在 Angular 销毁指令/组件之前调用。</p>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
