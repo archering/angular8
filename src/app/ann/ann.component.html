@@ -1,0 +1,21 @@
+<div>
+  <h2>这里是 annie ’ home</h2>
+  <div>
+
+    <div *ngIf="user">
+        <p *ngIf="user.name === 'zhang'">从about页面点击按钮跳转过来</p>
+      <p>当路由存在参数的情况下，你会看到这里的内容</p>
+      <div>
+        传递过来你的名字是{{user.name}}
+      </div>
+      <div>
+        传递过来你的年龄是{{user.age}}
+      </div>
+    </div>
+ 
+    <div>
+      <button [routerLink]="['/annie','wangzong',33]">点击 reload这个页面，同时追加路由参数</button>
+    </div>
+
+  </div>
+</div>

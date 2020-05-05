@@ -37,3 +37,9 @@ app-leftmenu{
 app-content{
     flex-grow: 1;
 }
+
+app-playground{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}

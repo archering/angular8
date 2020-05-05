@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import Log from '../services/log.service';
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  styleUrls: ['./body.component.css'],
+  providers:[Log]
 })
 export class BodyComponent implements OnInit {
-
+  value = 1000;
+  showme = false;
+  listshow:number = 10;
   users = [
     {
       id:"009944549327",
@@ -34,9 +38,15 @@ export class BodyComponent implements OnInit {
     }        
   ]
 
-  constructor() { }
+  constructor(private log:Log) { 
+  }
 
   ngOnInit() {
+    this.log.format("ngOninit 启动了");
+  }
+
+  toggle(){
+    this.showme = !this.showme; 
   }
 
   doRemove(evt:any){

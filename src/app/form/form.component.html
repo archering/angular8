@@ -1,0 +1,40 @@
+<div class="container">
+  <form class="form-inline">
+    <label>用户名<input type="text" class="form-control" name="id" [(ngModel)]="user.name"></label>
+    <label class="sr-only">国家</label>
+    <input type="text" class="form-control " id="nation" name="nation" [(ngModel)]="user.nation">
+    <label class="sr-only" >性别</label>
+    <input type="text" class="form-control " id="gender" name="gender" [(ngModel)]="user.gender">
+    <label class="sr-only">年龄</label>
+    <input type="text" class="form-control" id="age" name="age" [(ngModel)]="user.age">
+    <button type="submit" class="btn btn-primary" (click)="doAdd()">添加</button>
+  </form>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">编号</th>
+        <th scope="col">名字</th>
+        <th scope="col">国家</th>
+        <th scope="col">性别</th>
+        <th scope="col">年龄</th>
+        <th scope="col">编辑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userList">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.nation}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.age}}</td>
+        <td class="remove" (click)="remove(item.id)">删除</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+<div class="container">
+    <add-user></add-user>
+    <user-list ></user-list>
+</div>

@@ -1,0 +1,32 @@
+
+.container{
+    padding: 20px;
+}
+
+input{
+    padding: 3px;
+}
+#age,#gender{
+    width: 40px;
+}
+.table{
+    width: 700px;
+    margin-top:20px;
+}
+
+.table td,th{
+    text-align: left;
+    padding-left: 10px;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.remove{
+    color:blue;
+    cursor: pointer;
+}
+button{
+    padding: 3px 20px;
+    margin-left: 20px;
+    background-color: rgb(140, 127, 255);
+    color:white;
+}

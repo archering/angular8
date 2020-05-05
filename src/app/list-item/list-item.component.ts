@@ -1,4 +1,4 @@
-import { Component, OnInit , Input, Output, EventEmitter, ViewEncapsulation, ViewChild} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter, ViewEncapsulation, ViewChild, ContentChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
@@ -12,8 +12,9 @@ export class ListItemComponent implements OnInit {
 
    @Output() removeItem = new EventEmitter<{id:string}>();
 
-   @ViewChild('theImage') icon:HTMLElement;
+   @ViewChild('theImage') icon:ElementRef;
 
+   @ContentChild('inside') slot:ElementRef;
 
 
   constructor() {
@@ -24,6 +25,10 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
     
     console.log(this.icon.nativeElement.src);
+  }
+
+  ngAfterContentInit(){
+    this.slot.nativeElement.innerText =" hahah";
   }
 
   onRemove(image:HTMLImageElement){

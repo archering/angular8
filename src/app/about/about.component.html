@@ -1,0 +1,14 @@
+<p>
+  about works!
+</p>
+<div>
+  <button routerLink="/annie/zhang/23"
+          [queryParams]="{edit:true,user:1}"
+          fragment="beijing"> 
+    点击跳转到annie页面，并传递参数 /:name/:id
+  </button>
+</div>
+
+<div>
+  <button (click)="navi()"> 事件处理，点击跳转到annie页面，并传递参数 /:name/:id</button>
+</div>

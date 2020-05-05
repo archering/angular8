@@ -1,0 +1,44 @@
+
+.tab-container{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    padding-left:20px;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.content-container{
+    position: relative;
+    width: 390px;
+    height: 110px;
+    padding-left:20px;   
+}
+.tab{
+    display: flex;
+    width: 100px;
+    height: 30px;
+    border:1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+}
+.tab.active{
+    background-color: rgb(153, 93, 209);
+    color: white;
+}
+
+.cotent{
+    position: relative;
+    width: 100%;
+    height: 330px;
+    background: rgb(235, 233, 233);
+    
+}
+
+.activeone{
+    background-color: rgb(191, 198, 255);
+}
+
+.activetwo{
+    background-color: rgb(136, 247, 247);
+}

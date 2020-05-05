@@ -1,0 +1,10 @@
+<div class="tab-container">
+  <span class="tab" (click)="active(1)" [ngClass]="{'active':activeTab === 1}">tab1</span>
+  <span class="tab" (click)="active(2)" [ngClass]="{'active':activeTab === 2}">tab2</span>
+  <span class="tab" (click)="active(3)" [ngClass]="{'active':activeTab === 3}">tab3</span> 
+</div>
+<div class="content-container">
+  <div class="cotent" *ngIf="activeTab === 1" [ngClass]="{'activeone':activeTab === 1}"></div>
+  <div class="cotent" *ngIf="activeTab === 2" [ngClass]="{'activetwo':activeTab === 2}"></div>
+  <div class="cotent" *ngIf="activeTab === 3" [ngClass]="{'activethree':activeTab === 3}"></div>
+</div>

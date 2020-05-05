@@ -1,0 +1,10 @@
+<form class="form-inline">
+  <label>用户名<input type="text" class="form-control" name="id" [(ngModel)]="user.name"></label>
+  <label class="sr-only">国家</label>
+  <input type="text" class="form-control " id="nation" name="nation" [(ngModel)]="user.nation">
+  <label class="sr-only" >性别</label>
+  <input type="text" class="form-control " id="gender" name="gender" [(ngModel)]="user.gender">
+  <label class="sr-only">年龄</label>
+  <input type="text" class="form-control" id="age" name="age" [(ngModel)]="user.age">
+  <button type="submit" class="btn btn-primary" (click)="doAdd()">添加</button>
+</form>

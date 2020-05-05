@@ -39,8 +39,8 @@ export class ContentComponent implements OnInit {
     alert(123);
   }
 
-  typing(evt:InputEvent){
-    console.log(evt.target.value);
+  typing(evt:MouseEvent){
+    console.log(evt.target);
   }
 
   toggle(){

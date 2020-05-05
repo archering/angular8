@@ -1,9 +1,43 @@
 <div>
-    <p>线面显示一个组件列表</p>
+    <p myHover>线面显示一个组件列表</p>
     <ul>
       <app-list-item 
       *ngFor="let user of users; let i = index" [student]="user"
       (removeItem)="doRemove($event)">
+      <h3 #inside>这里是什么 ng-content内容</h3>
     </app-list-item>
     </ul>
+</div>
+<hr>
+<div>
+  <div [ngSwitch]="value">
+    <div *ngSwitchCase="10">值是10的时候显示10</div>
+    <div *ngSwitchCase="100">值是100的时候显示100</div>
+    <div *ngSwitchCase="1000">值是1000的时候显示1000</div>
+    <div *ngSwitchDefault>默认什么都不显示</div>
+  </div>
+
+  <hr>
+  <button (click)="toggle()">点击显示下面内容，改变showme的值</button>
+  <div *ngIf="showme">
+    <p>正常的 ngIf指令作用的标签</p>
+  </div>
+  <ng-template [ngIf]="showme">
+    <div>
+      <p>这里显示的是实际的 ngIf的样子</p>
+    </div>
+  </ng-template>
+
+</div>
+<div>
+  <ul *unless="listshow">
+    <li>1 显示这个列表</li>
+    <li>2 显示这个列表</li>
+  </ul>
+  <ng-template [unless]="listshow">
+    <ol>
+      <li>1 显示这个</li>
+      <li>2 显示这个</li>
+    </ol>
+  </ng-template>
 </div>
