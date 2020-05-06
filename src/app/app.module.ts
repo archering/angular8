@@ -25,12 +25,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AnnComponent } from './ann/ann.component';
+import { NestComponent } from './nest/nest.component';
+import { OneComponent } from './nest/one/one.component';
+import { TwoComponent } from './nest/two/two.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 
 const routes:Routes = [
   {
     path:'',  //默认路由
-    component: HomeComponent
+    pathMatch:"full",
+    redirectTo:"home"
   },
   {
     path:'home',
@@ -59,7 +64,29 @@ const routes:Routes = [
   {
     path:'annie/:name/:age',
     component: AnnComponent
-  }      
+  },
+  {
+    path:'nested',
+    component:NestComponent,
+    children:[
+      {
+        path:"one",
+        component:OneComponent
+      },
+      {
+        path:"two",
+        component:TwoComponent
+      }     
+    ]
+  } ,
+  {
+    path:"notfound",
+    component:NotFoundPageComponent
+  },
+  {
+    path:"**",// cache all not-matched url 
+    redirectTo:"notfound"
+  }
   
 ];
 
@@ -84,7 +111,11 @@ const routes:Routes = [
     PlaygroundComponent,
     HomeComponent,
     AboutComponent,
-    AnnComponent
+    AnnComponent,
+    NestComponent,
+    OneComponent,
+    TwoComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
