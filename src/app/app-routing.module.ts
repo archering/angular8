@@ -10,6 +10,10 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { FormComponent } from './form/form.component';
 import { BodyComponent } from './body/body.component';
 import { CommunicationComponent } from './communication/communication.component';
+import { UnautoorizeComponent } from './unautoorize/unautoorize.component';
+import { GuardComponent } from './guard/guard.component';
+import { GuardService } from './services/guard.service';
+import { DpipeComponent } from './dpipe/dpipe.component';
 
 
 const routes:Routes = [
@@ -40,7 +44,8 @@ const routes:Routes = [
   },
   {
     path:'annie',
-    component: AnnComponent
+    component: AnnComponent,
+    data:{"warning":"this is an emergency"}
   }, 
   {
     path:'annie/:name/:age',
@@ -65,6 +70,19 @@ const routes:Routes = [
     component:NotFoundPageComponent
   },
   {
+    path:"guard",// cache all not-matched url 
+    canActivate:[GuardService],
+    component:GuardComponent
+  },  
+  {
+    path:"pipe",// cache all not-matched url 
+    component: DpipeComponent
+  },   
+  {
+    path:"unauthorize",// cache all not-matched url 
+    component:UnautoorizeComponent
+  },  
+  {
     path:"**",// cache all not-matched url 
     redirectTo:"notfound"
   }
@@ -74,7 +92,7 @@ const routes:Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash:true})
   ],
   exports: [
     RouterModule

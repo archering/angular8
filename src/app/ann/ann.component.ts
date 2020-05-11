@@ -9,9 +9,16 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AnnComponent implements OnInit {
 
   user:{name:string,age:number};
+  errorMessage:string;
   constructor(private activeRoute:ActivatedRoute) { }
 
   ngOnInit() {
+
+    console.log(this.activeRoute.snapshot.data["warning"]);
+
+ 
+
+
     if(this.activeRoute.snapshot.params["name"]){
       this.user = {
           name:this.activeRoute.snapshot.params["name"],
@@ -22,12 +29,17 @@ export class AnnComponent implements OnInit {
     }
 
     this.activeRoute.params.subscribe( (params:Params)=>{
-      this.user.name = params['name'];
-      this.user.age = params['age'];
+      if(params['name']) this.user.name = params['name'];
+      if(params['age']) this.user.age = params['age'];
     } );
-
    
 
+  }
+
+  ngDoCheck() { 
+    this.activeRoute.data.subscribe( (data)=>{
+      this.errorMessage = data["warning"];
+    });
   }
 
 }

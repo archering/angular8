@@ -26,7 +26,12 @@ import { NestComponent } from './nest/nest.component';
 import { OneComponent } from './nest/one/one.component';
 import { TwoComponent } from './nest/two/two.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import { UnautoorizeComponent } from './unautoorize/unautoorize.component';
+import { GuardComponent } from './guard/guard.component'
+import { GuardService } from './services/guard.service';
+import AuthService from './services/auth.service';
+import { DpipeComponent } from './dpipe/dpipe.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,10 @@ import { AppRoutingModule } from './app-routing.module'
     NestComponent,
     OneComponent,
     TwoComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    UnautoorizeComponent,
+    GuardComponent,
+    DpipeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,9 @@ import { AppRoutingModule } from './app-routing.module'
     AppRoutingModule
   ],
   providers: [
-    TabService
+    TabService,
+    GuardService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
