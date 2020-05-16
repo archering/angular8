@@ -1,5 +1,10 @@
+<div>
+    title:
+    <input type="text" [(ngModel)]="title" (input)="deal()">
+
+</div>
 <p>
-  about works!
+  {{tl | capital:2:3 }}
 </p>
 <div>
   <button routerLink="/annie/zhang/23"

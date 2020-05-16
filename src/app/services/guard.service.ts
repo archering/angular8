@@ -9,17 +9,20 @@ import AuthService from './auth.service';
 })
 export class GuardService implements CanActivate {
 
+    loading:number = 0;
     constructor(private authService:AuthService,private router:Router ){
 
     }
 
     canActivate(ars:ActivatedRouteSnapshot, state:RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
+        this.loading = 1;
         return this.authService.permission().then((bool:boolean)=>{
+            this.loading = 2;
             if(bool){
                 return bool;
             }else {
                 this.router.navigate(["unauthorize"])
-            }
+            }     
         });
     }
  

@@ -40,10 +40,25 @@ ul{
 
 
 .right-content{
+    position: relative;
     display: flex;
     flex-grow: 1;
     height: 100%;
     width: 100px;
     padding: 20px;
     background-color: rgba(184, 184, 184, 0.829);
+}
+
+.wrapper{
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(119, 119, 119);
+    color:white;
+    font-size: 32px;
 }

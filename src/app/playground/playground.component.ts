@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GuardService } from '../services/guard.service';
 
 @Component({
   selector: 'app-playground',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private guard:GuardService) { 
+
+  }
 
   ngOnInit() {
   }

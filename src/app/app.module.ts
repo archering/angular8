@@ -32,6 +32,7 @@ import { GuardComponent } from './guard/guard.component'
 import { GuardService } from './services/guard.service';
 import AuthService from './services/auth.service';
 import { DpipeComponent } from './dpipe/dpipe.component';
+import { CapitalPipe } from './capital.pipe';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { DpipeComponent } from './dpipe/dpipe.component';
     NotFoundPageComponent,
     UnautoorizeComponent,
     GuardComponent,
-    DpipeComponent
+    DpipeComponent,
+    CapitalPipe
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,6 @@ import { DpipeComponent } from './dpipe/dpipe.component';
   ],
   providers: [
     TabService,
-    GuardService,
     AuthService
   ],
   bootstrap: [AppComponent]
