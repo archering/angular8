@@ -29,10 +29,10 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { AppRoutingModule } from './app-routing.module';
 import { UnautoorizeComponent } from './unautoorize/unautoorize.component';
 import { GuardComponent } from './guard/guard.component'
-import { GuardService } from './services/guard.service';
 import AuthService from './services/auth.service';
 import { DpipeComponent } from './dpipe/dpipe.component';
 import { CapitalPipe } from './capital.pipe';
+import { ChinaModule } from './china/china.module';
 
 @NgModule({
   declarations: [
@@ -67,6 +67,7 @@ import { CapitalPipe } from './capital.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    ChinaModule,
     AppRoutingModule
   ],
   providers: [

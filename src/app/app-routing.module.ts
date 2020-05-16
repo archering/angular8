@@ -14,7 +14,6 @@ import { UnautoorizeComponent } from './unautoorize/unautoorize.component';
 import { GuardComponent } from './guard/guard.component';
 import { GuardService } from './services/guard.service';
 import { DpipeComponent } from './dpipe/dpipe.component';
-import { HelloRoutingModule } from './hello/hello-routing.module';
 
 
 const routes:Routes = [
@@ -82,7 +81,7 @@ const routes:Routes = [
   {
     path:"hello",
     loadChildren:()=>import('./hello/hello.module').then( (mod:any)=>{ return mod.HelloModule } )
-  },      
+  },        
   {
     path:"unauthorize",// cache all not-matched url 
     component:UnautoorizeComponent
@@ -97,7 +96,6 @@ const routes:Routes = [
 
 @NgModule({
   imports: [
-    HelloRoutingModule,
     RouterModule.forRoot(routes, {useHash:true})
   ],
   exports: [

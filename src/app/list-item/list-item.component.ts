@@ -12,9 +12,9 @@ export class ListItemComponent implements OnInit {
 
    @Output() removeItem = new EventEmitter<{id:string}>();
 
-   @ViewChild('theImage') icon:ElementRef;
+   @ViewChild('theImage',{static: false}) icon:ElementRef;
 
-   @ContentChild('inside') slot:ElementRef;
+   @ContentChild('inside',{static: false}) slot:ElementRef;
 
 
   constructor() {
