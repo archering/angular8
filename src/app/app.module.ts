@@ -33,6 +33,10 @@ import AuthService from './services/auth.service';
 import { DpipeComponent } from './dpipe/dpipe.component';
 import { CapitalPipe } from './capital.pipe';
 import { ChinaModule } from './china/china.module';
+import { FakeService } from './services/fake.service';
+import { FormhttpComponent } from './formhttp/formhttp.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -62,17 +66,20 @@ import { ChinaModule } from './china/china.module';
     UnautoorizeComponent,
     GuardComponent,
     DpipeComponent,
-    CapitalPipe
+    CapitalPipe,
+    FormhttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ChinaModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
     TabService,
-    AuthService
+    AuthService,
+    FakeService
   ],
   bootstrap: [AppComponent]
 })

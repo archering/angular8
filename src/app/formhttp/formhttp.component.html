@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">编号</th>
+          <th scope="col">名字</th>
+          <th scope="col">国家</th>
+          <th scope="col">性别</th>
+          <th scope="col">年龄</th>
+          <th scope="col">编辑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of userList">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.nation}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.age}}</td>
+          <td class="remove" >删除</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

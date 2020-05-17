@@ -14,6 +14,7 @@ import { UnautoorizeComponent } from './unautoorize/unautoorize.component';
 import { GuardComponent } from './guard/guard.component';
 import { GuardService } from './services/guard.service';
 import { DpipeComponent } from './dpipe/dpipe.component';
+import { FormhttpComponent } from './formhttp/formhttp.component';
 
 
 const routes:Routes = [
@@ -34,6 +35,10 @@ const routes:Routes = [
     path:'form',
     component: FormComponent
   },
+  {
+    path:'form2',
+    component: FormhttpComponent
+  },  
   {
     path:'body',
     component: BodyComponent

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FakeService } from 'src/app/services/fake.service';
 
 @Component({
   selector: 'app-door',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fake:FakeService) { }
 
   ngOnInit() {
+    this.fake.fakeit();
   }
 
 }
