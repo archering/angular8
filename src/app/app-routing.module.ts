@@ -81,7 +81,11 @@ const routes:Routes = [
   {
     path:"hello",
     loadChildren:()=>import('./hello/hello.module').then( (mod:any)=>{ return mod.HelloModule } )
-  },        
+  },   
+  {
+    path:"demos",
+    loadChildren:()=>import('./demos/demos.module').then( (mod:any)=>{ return mod.DemosModule } )
+  },   
   {
     path:"unauthorize",// cache all not-matched url 
     component:UnautoorizeComponent

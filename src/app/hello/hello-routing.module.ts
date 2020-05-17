@@ -27,6 +27,4 @@ const routes:Routes = [
         RouterModule
     ]
 })
-export class HelloRoutingModule {
-
-}
+export class HelloRoutingModule {}
