@@ -10,8 +10,7 @@ interface Users{
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
-  providers:[UserService]
+  styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
   user:Users = {id:"",name:"",nation:"china",gender:"male",age:"20"};

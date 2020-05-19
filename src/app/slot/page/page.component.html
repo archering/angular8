@@ -1,0 +1,11 @@
+<div>
+    测试多个ng-content显示的问题
+    <div >
+        这里显示 通过 name属性  
+        <ng-content select="[name='one']"></ng-content>
+    </div>
+    <div >
+        这里显示 通过 class属性  
+        <ng-content select=".red"></ng-content>
+    </div>    
+</div>

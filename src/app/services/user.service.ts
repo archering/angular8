@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 interface Users{
     id:string;
     name:string;
@@ -6,6 +8,11 @@ interface Users{
     age:string;
   }
 
+ @Injectable(
+     {
+         providedIn:"root"
+     }
+ ) 
 export default class UserService {
     users:{id:string,name:string,nation:string,gender:string,age:string}[] = [
         {id:"1322001001",name:"johon",nation:"china",gender:"male",age:"20"},

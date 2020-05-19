@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, NoPreloading } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AnnComponent } from './ann/ann.component';
@@ -90,6 +90,10 @@ const routes:Routes = [
   {
     path:"demos",
     loadChildren:()=>import('./demos/demos.module').then( (mod:any)=>{ return mod.DemosModule } )
+  },  
+  {
+    path:"slot",
+    loadChildren:()=>import('./slot/slot.module').then( (mod:any)=>mod.SlotModule  )
   },   
   {
     path:"unauthorize",// cache all not-matched url 
@@ -105,7 +109,7 @@ const routes:Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {useHash:true})
+    RouterModule.forRoot(routes, {useHash:true, preloadingStrategy:NoPreloading})
   ],
   exports: [
     RouterModule
