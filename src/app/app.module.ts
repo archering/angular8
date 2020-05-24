@@ -36,6 +36,7 @@ import { ChinaModule } from './china/china.module';
 import { FakeService } from './services/fake.service';
 import { FormhttpComponent } from './formhttp/formhttp.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WithResolveModule } from './with-resolve/with-resolve.module';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ChinaModule,
     HttpClientModule,
+    WithResolveModule,
     AppRoutingModule
   ],
   providers: [

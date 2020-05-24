@@ -94,7 +94,7 @@ const routes:Routes = [
   {
     path:"slot",
     loadChildren:()=>import('./slot/slot.module').then( (mod:any)=>mod.SlotModule  )
-  },   
+  }, 
   {
     path:"unauthorize",// cache all not-matched url 
     component:UnautoorizeComponent
